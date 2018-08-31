@@ -1,0 +1,707 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans-Regular.woff2") format("woff2"),
+        url("../fonts/OpenSans-Regular.woff") format("woff"),
+        url("../fonts/OpenSans-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Open Sans Bold";
+    src: url("../fonts/OpenSans-Bold.woff2") format("woff2"),
+        url("../fonts/OpenSans-Bold.woff") format("woff"),
+        url("../fonts/OpenSans-Bold.ttf") format("truetype");
+}
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* Reset CSS */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+body {
+    position: relative;
+    background: #f1f1f1;
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+}
+h1 {font-size: 80px}
+h2 {font-size: 52px}
+h3 {font-size: 36px}
+.bold {
+    font-family: 'Open Sans Bold', sans-serif;
+}
+.flex {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    justify-content: space-around;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.flex.centered {
+    justify-content: center;
+    align-items: center;
+}
+.flex-col {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.btn {
+    display: inline-block;
+    width: 310px;
+    color: #fff;
+    font-size: 14px;
+    background: #5e42b0;
+    margin: 10px 25px;
+    padding: 14px 50px 14px 40px;
+    -webkit-border-radius: 38px;
+    -moz-border-radius: 38px;
+    border-radius: 38px;
+    text-transform: uppercase;
+    text-align: left;
+}
+.apple-icon, .google-icon, .btn-text {
+    display: inline-block;
+    vertical-align: middle;
+}
+.btn-text {
+    padding-left: 20px;
+}
+.col-12 {
+    flex: 100%;
+}
+.col-10 {
+    flex: 83.332%;
+}
+.col-8 {
+    flex: 66.666%;
+}
+.col-6 {
+    flex: 50%;
+}
+.col-4 {
+    flex: 33.333%;
+}
+.col-2 {
+    flex: 16.666%;
+}
+main.flex {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    /*max-width: 1560px;*/
+}
+header {
+    box-sizing: border-box;
+    background: url('../img/football_1920.jpg') no-repeat;
+}
+footer {
+    box-sizing: border-box;
+    padding: 230px 0 50px;
+    background: url('../img/game_1920.jpg') no-repeat;
+}
+header, footer, section {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+section {
+    min-height: auto;
+}
+header:after,
+footer:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #0a0e34;
+    opacity: 0.9;
+    z-index: 9;
+}
+header .sec-content {padding: 40px 0 110px;}
+.sec-content {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    max-width: 1560px;
+    z-index: 19;
+}
+.sec-content > .flex {
+    width: 100%;
+    flex-wrap: nowrap;
+}
+.logo-container {}
+.logo-full {
+    margin: auto;
+    width: 191px;
+    height: 53px;
+    background: url('../svg/surface_logo_text.svg') no-repeat;
+}
+.logo-sign {
+    margin: auto;
+    width: 104px;
+    height: 87px;
+    background: url('../svg/surface_logo.svg') no-repeat;
+}
+.app-icon {
+    box-sizing: border-box;
+    width: 135px;
+    height: 135px;
+    padding: 24px 0;
+    border-radius: 30px;
+    background: #7751db; /* Old browsers */
+    background: -moz-linear-gradient(top,  #7751db 0%, #5e3db3 50%, #50329c 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #7751db 0%,#5e3db3 50%,#50329c 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #7751db 0%,#5e3db3 50%,#50329c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7751db', endColorstr='#50329c',GradientType=0 ); /* IE6-9 */
+}
+.text-container {
+    font-family: 'Open Sans Bold', sans-serif;
+    font-size: 90px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+header .text-container {
+    padding: 0 15px;
+}
+.bottom-text,
+.top-text {
+    line-height: 90px;
+}
+.bottom-text {
+    text-align: right;
+}
+.apple-icon {
+    width: 44px;
+    height: 48px;
+    background: url('../svg/apple_logo_black.svg') no-repeat top center;
+}
+.google-icon {
+    width: 40px;
+    height: 48px;
+    background: url('../svg/google-play.svg') no-repeat center;
+}
+.btn-container {
+    text-align: center;
+}
+header .sec-content,
+footer .sec-content {
+    justify-content: space-between;
+}
+footer .top-text {
+    font-size: 80px;
+    line-height: 1;
+}
+footer .bottom-text {
+    font-family: "Open Sans", sans-serif;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: normal;
+    text-align: left;
+    color: #a496ca;
+}
+footer .text-container {
+    text-align: center;
+}
+footer .text-container > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+footer .btn-container {
+    margin-bottom: 60px;
+}
+.sec-content {
+    padding: 0 15px;
+}
+.strokes-sec h1 {
+    font-family: 'Open Sans Bold', sans-serif;
+    font-size: 80px;
+    line-height: 60px;
+    color: #e7e7e7;
+    margin: 115px 0 45px;
+    text-transform: uppercase;
+}
+.strokes-sec h3 {
+    font-family: 'Open Sans Bold', sans-serif;
+    color: #c1c1c1;
+    margin: 50px 0 20px;
+    text-transform: uppercase;
+}
+.strokes-sec span, .square-num span {
+    position: relative;
+    top: -12px;
+    padding-bottom: 7px;
+    font-size: 18px;
+    color: #000;
+}
+.strokes-sec span {
+    margin-right: 10px;
+}
+.strokes-sec span:after, .square-num span:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: #5e42b0;
+    border-radius: 2px;
+}
+.square-num span:after {
+    background: #8f7bc8;
+    z-index: 99;
+}
+.strokes-sec p {
+    font-size: 20px;
+    letter-spacing: 0.01em;
+    margin: 0 0 50px;
+}
+.sec-title {
+    position: relative;
+}
+.sec-stroke {
+    position: relative;
+    z-index: 19;
+}
+.sec-stroke:after {
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    z-index: -1;
+}
+.flex.sec-stoke-gray:after {
+    background: #f6f4fa;
+}
+.flex.sec-stoke-purple:after {
+    background: #5e42b0;
+}
+.sec-stoke-dark-blue:after {
+    background: #0a0e34;
+}
+.sec-stoke-purple h3 span:after,
+.sec-stoke-dark-blue h3 span:after {
+    background: #efefef;
+}
+.sec-stoke-dark-blue h3 span {color: #9173e6}
+.sec-stoke-purple p,
+.sec-stoke-dark-blue p {
+    color: #fff;
+}
+.athlets-image {
+    position: absolute;
+    top: 30px;
+    right: 54%;
+    width: 566px;
+    height: 908px;
+    background: url('../img/footballer_566.png') no-repeat;
+    z-index: 99;
+}
+.players-image {
+    position: absolute;
+    top: 10px;
+    left: 37%;
+    width: 991px;
+    height: 815px;
+    background: url('../img/basketballer_991.png') no-repeat;
+    z-index: 99;
+}
+.square-sec > .flex {
+    height: 750px;
+}
+.square-num {
+    position: absolute;
+    right: -85px;
+    width: 170px;
+    height: 155px;
+    background: #5e42b0;
+    text-align: center;
+}
+.square-num span {
+    top: -5px;
+    font-family: 'Open Sans Bold', sans-serif;
+    font-size: 24px;
+    color: #fff;
+}
+#square-1 {
+    background: url('../img/be-active_1024.jpg') no-repeat 50%;
+}
+#square-2 {
+    background: url('../img/find-contact_1024.jpg') no-repeat;
+}
+#square-3 {
+    background: url('../img/work-it_1024.jpg') no-repeat;
+}
+#square-1, #square-2, #square-3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 50%;
+    height: 750px;
+}
+.square-text-col {
+    align-self: center;
+}
+.sec-title h1 {
+    font-family: "Open Sans Bold", sans-serif;
+    color: #e7e7e7;
+    text-transform: uppercase;
+    line-height: 155px;
+    margin-bottom: 60px;
+}
+.sec-title p {
+    font-size: 24px;
+}
+.image + .sec-content .sec-title {
+    padding-left: 120px;
+}
+.image + .sec-content .square-num {
+    right: auto;
+    left: -85px;
+}
+.sec-content + .image {
+    left: auto!important;
+    right: 0;
+}
+@media (max-width: 1560px) {
+    .sec-content {
+        width: 100%;
+    }
+}
+@media (min-width: 641px) and (max-width: 960px) {
+    .sec-content {
+        padding: 0 25px;
+    }
+    .strokes-sec h3 {
+        font-size: 32px;
+    }
+    .athlets-image {
+        top: 140px;
+        right: 60%;
+    }
+    .md-col-12 {
+        flex: 100%;
+    }
+    .md-col-5 {
+        flex: 41.666%;
+    }
+    .md-col-7 {
+        flex: 58.333%;
+    }
+    .logo-full {
+        width: 210px;
+        height: 60px;
+    }
+    .sec-content > .flex {
+        align-items: center;
+    }
+    header .text-container {
+        padding: 0 10%;
+    }
+    header .bottom-text, header .top-text {
+        font-size: 64px;
+        line-height: 74px;
+        letter-spacing: 3px;
+    }
+    header .bottom-text {
+        width: 510px;
+        margin-left: 15%;
+        text-align: left;
+    }
+    header .top-text {
+        margin-right: 15%;
+        white-space: nowrap;
+    }
+    .athlets-image {
+        width: 497px;
+        height: 699px;
+        background: url('../img/footballer_497.png') no-repeat;
+    }
+    .players-image {
+        background: url('../img/basketballer_436.png') no-repeat;
+        width: 436px;
+        height: 565px;
+        left: auto;
+        right: -25px;
+    }
+    .strokes-sec h1 {
+        margin: 85px 0 30px;
+    }
+    .strokes-sec h3 {
+        margin-top: 30px;
+    }
+}
+@media (max-width: 960px) {
+    #square-1, #square-2, #square-3 {
+        width: 100%;
+        height: 585px;
+    }
+    .square-sec > .flex {
+        height: auto;
+    }
+    .square-sec > .flex .col-6 {
+        order: 1;
+        -ms-flex-order: 1;
+        height: 585px;
+    }
+    .square-sec > .flex .md-col-12 {
+        order: 2;
+        -ms-flex-order: 2;
+        height: auto;
+    }
+    #square-1 {
+        background: url('../img/be-active_960.jpg') no-repeat center;
+    }
+    #square-2 {
+        background: url('../img/find-contact_960.jpg') no-repeat;
+    }
+    #square-3 {
+        background: url('../img/work-it_960.jpg') no-repeat;
+    }
+    .square-num, .image + .sec-content .square-num {
+        left: 0;
+        top: -80px;
+    }
+    .square-num {
+        width: 115px;
+        height: 115px;
+    }
+    .sec-title {
+        padding-top: 40px;
+        padding-bottom: 100px;
+        padding-left: 0!important;
+    }
+    .sec-title h1 {
+        margin-bottom: 0;
+    }
+    footer .sec-content {padding: 0;}
+    footer .text-container > div {
+        margin: auto;
+        display: block;
+        text-align: center;
+    }
+    footer .bottom-text {
+        text-align: center;
+        font-size: 36px;
+    }
+    .app-icon {margin-bottom: 70px!important;}
+}
+@media (max-width: 640px) {
+    .sm-col-12 {
+        flex: 100%;
+    }
+    .sm-col-none {
+        display: none;
+    }
+    header {
+        background: url('../img/football_767.jpg') no-repeat center;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    .logo-full {
+        width: 135px;
+        height: 35px;
+    }
+    .btn {
+        display: block;
+        width: 100%;
+        margin: 7px auto;
+        font-size: 8px;
+        padding: 6px 30px 6px 30px;
+        text-align: center;
+    }
+    .btn-text {
+        width: 90px;
+        padding-left: 10px;
+        text-align: left;
+    }
+    .apple-icon, .google-icon {
+        width: 25px;
+        height: 30px;
+    }
+    .text-container {
+        font-size: 28px;
+    }
+    .bottom-text, .top-text {
+        line-height: 32px;
+        letter-spacing: 1px;
+    }
+    header .bottom-text {
+        width: 230px;
+        margin-top: 20px;
+        margin-left: 15%;
+        text-align: left;
+    }
+    header .top-text {
+        margin-right: 20%;
+        white-space: nowrap;
+    }
+    header .sec-content {
+        padding: 30px 20px 80px;
+    }
+    .sec-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .sec-content > .flex {
+        align-items: center;
+    }
+    .strokes-sec h1 {
+        font-size: 50px;
+        line-height: 50px;
+        margin: 25px 0 265px;
+    }
+    .athlets-image {
+        width: 100%;
+        right: 0;
+        top: 90px;
+        height: 290px;
+        background: url(../img/footballer_192.png) no-repeat center;
+    }
+    .players-image {
+        top: 90px;
+        left: -6px;
+        width: 100%;
+        height: 248px;
+        background: url(../img/basketballer_302.png) no-repeat center;
+    }
+    .strokes-sec h3 {
+        font-size: 23px;
+    }
+    .strokes-sec span, .square-num span {
+        top: -7px;
+        padding-bottom: 3px;
+        font-size: 14px;
+    }
+    .strokes-sec span:after, .square-num span:after {
+        height: 4px;
+    }
+    .strokes-sec p {
+        font-size: 15px;
+    }
+    .sec-title {
+        padding-bottom: 70px;
+    }
+    .sec-title h1 {
+        font-size: 28px;
+        line-height: 28px;
+        margin-bottom: 20px;
+    }
+    .square-sec > .flex .col-6 {
+        height: 355px;
+    }
+    .square-sec > .flex .sm-col-12 {
+        height: auto;
+    }
+    #square-1 {
+        background: url('../img/be-active_640.jpg') no-repeat center;
+    }
+    #square-2 {
+        background: url('../img/find-contact_640.jpg') no-repeat;
+    }
+    #square-3 {
+        background: url('../img/work-it_640.jpg') no-repeat;
+    }
+    #square-1, #square-2, #square-3 {
+        height: 355px;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    .square-num {
+        width: 70px;
+        height: 70px;
+    }
+    .square-num span {top: -2px}
+    .square-num, .image + .sec-content .square-num {top: -55px}
+    .sec-title p {
+        font-size: 16px;
+    }
+    footer {
+        padding: 100px 0 10px;
+    }
+    footer .top-text {
+        font-size: 32px;
+    }
+    footer .bottom-text {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    footer .btn-container {
+        margin-bottom: 0;
+    }
+    .app-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 15px;
+        padding: 10px 0;
+        margin-bottom: 60px;
+    }
+    .logo-sign {
+        width: 55px;
+        height: 50px;
+    }
+}
